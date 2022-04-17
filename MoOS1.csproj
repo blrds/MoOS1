@@ -68,6 +68,10 @@
     <Compile Include="Infrastructure\ObservableObjects\ObservableObject.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameBase\MoveInformation.cs" />
+    <Compile Include="Models\Players\PlayerABase\PlayerA.cs" />
+    <Compile Include="Models\Players\PlayerB.cs" />
+    <Compile Include="Models\Players\RandomA.cs" />
+    <Compile Include="Models\Players\WinnerA.cs" />
     <Compile Include="ViewModels\Base\ViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Windows\MainWindow.xaml.cs">

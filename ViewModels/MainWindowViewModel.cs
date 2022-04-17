@@ -14,6 +14,7 @@ namespace MoOS1.ViewModels
     {
         public Game Game { get; } = new Game();
 
+
         #region StartCommand
         public ICommand StartCommand { get; }
         private bool CanStartCommnadExecute(object p) => (Game.movesCount>0 && Game.fieldSize>2 && !Game.isGameOn);
