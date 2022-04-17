@@ -8,12 +8,13 @@ namespace MoOS1.Models.GameBase
 {
     class MoveInformation
     {
-        public MoveInformation(int move, int playerACall, bool playerBAnswer, int finalMove)
+        public MoveInformation(int move, int currentLocation, int playerACall, bool playerBAnswer, int finalMove)
         {
             Move = move;
             PlayerACall = playerACall;
             PlayerBAnswer = playerBAnswer;
             FinalMove = finalMove;
+            CurrentLocation = currentLocation;
         }
 
         public int Move { get; }
@@ -21,5 +22,6 @@ namespace MoOS1.Models.GameBase
         public bool PlayerBAnswer { get; }
 
         public int FinalMove { get; }
+        public int CurrentLocation { get; }
     }
 }

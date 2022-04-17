@@ -12,12 +12,12 @@ namespace MoOS1.Models.Players
                                              true,true, false,false,false,false,
                                              true,true,true,true, false,
                                              true, false,false};
-        public bool Answer(int move, int currentPosition, int playerACall, int fieldSize, out int finalMove)
+        public bool Answer(int move, int currentPosition, int playerACall, out int finalMove)
         {
             if (currentPosition == 0) finalMove = 1;
-            else if (answers[move]) finalMove = currentPosition + playerACall;
+            else if (answers[move%25]) finalMove = currentPosition + playerACall;
             else finalMove = currentPosition + playerACall * -1;
-            return answers[move];
+            return answers[move%25];
 
         }
     }
