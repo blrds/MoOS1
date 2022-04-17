@@ -16,10 +16,21 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DataGrid>
-            
+
         </DataGrid>
-        <StackPanel Grid.Column="1">
-            
-        </StackPanel>
+        <DockPanel Grid.Column="1" LastChildFill="True">
+            <Button Content="СТАРТ" DockPanel.Dock="Bottom" Margin="5" Command="{Binding StartCommand}"/>
+            <StackPanel>
+                <TextBlock Text="Игрок A" Margin="5"/>
+                <ComboBox Margin="5" IsEnabled="{Binding Game.isGameOn, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ComboBoxItem Content="Стремящийся выиграть" IsSelected="True" Name="winner"/>
+                    <ComboBoxItem Content="Случайный" Name="random"/>
+                </ComboBox>
+                <TextBlock Text="Размер поля (>2)" Margin="5" />
+                <TextBox Margin="5" Text="{Binding Game.fieldSize, Mode=OneWay, StringFormat=\{0:D\}}"/>
+                <TextBlock Text="Кол-во ходов (>0)" Margin="5" />
+                <TextBox Margin="5" Text="{Binding Game.movesCount, Mode=OneWay, StringFormat=\{0:D\}}"/>
+            </StackPanel>
+        </DockPanel>
     </Grid>
 </Window>
