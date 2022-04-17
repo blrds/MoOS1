@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MoOS1.Infrastructure.Commands
 {
+    /// <summary>
+    /// Улучшений стандартной команды
+    /// </summary>
     class LambdaCommand : Command
     {
         private readonly Action<object> _execute;

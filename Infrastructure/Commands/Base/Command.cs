@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace MoOS1.Infrastructure.Commands.Base
 {
+    /// <summary>
+    /// Класс команды
+    /// </summary>
     internal abstract class Command : ICommand
     {
         public event EventHandler CanExecuteChanged {

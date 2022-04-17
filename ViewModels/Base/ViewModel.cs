@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace MoOS1.ViewModels.Base
 {
+    /// <summary>
+    /// Протоип класса-уведомителя для ViewModel'ей
+    /// </summary>
     internal abstract class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

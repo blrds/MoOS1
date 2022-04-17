@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace MoOS1.Infrastructure.ObservableObjects
 {
+    /// <summary>
+    /// Реализует простейший прототип класса-уведомителя
+    /// </summary>
     class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

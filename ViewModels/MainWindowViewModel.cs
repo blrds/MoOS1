@@ -19,14 +19,29 @@ namespace MoOS1.ViewModels
         public Game Game { get; } = new Game();
 
         private int _simulationsCount;
+
+        /// <summary>
+        /// Кол-во симуляций
+        /// </summary>
         public int SimulationsCount
         {
             get { return _simulationsCount; }
             set { _simulationsCount = value; }
         }
+
+        /// <summary>
+        /// Индекс выбранного режима в комбобоксе
+        /// </summary>
         public int SelectedPlayerAMode { get; set; }
+
+        /// <summary>
+        /// Коллекция игр, переменная Game является последней
+        /// </summary>
         public ObservableCollection<Game> Games { get; } = new ObservableCollection<Game>();
 
+        /// <summary>
+        /// Статистика побед А к победам Б
+        /// </summary>
         public string Statistic
         {
             get
@@ -40,6 +55,10 @@ namespace MoOS1.ViewModels
         }
 
         #region StartCommand
+
+        /// <summary>
+        /// Команда старт для кнопки старт
+        /// </summary>
         public ICommand StartCommand { get; private set; }
         private bool CanStartCommnadExecute(object p) => true/*(Game.movesCount>0 && Game.fieldSize>2 && !Game.isGameOn && SimulationsCount>0)*/;
         private void OnStartCommandExecuted(object p)
@@ -51,7 +70,7 @@ namespace MoOS1.ViewModels
                 case 1: { Game.playerA = new RandomA(); break; }
                 default: { Game.playerA = new RandomA(); break; }
             }
-            for (int i = 0; i < SimulationsCount - 1; i++)
+            for (int i = 0; i < SimulationsCount - 1/*-1 тк под одну игру есть отдельная переменная*/; i++)
             {
                 var game = new Game();
                 game.playerA = Game.playerA;
