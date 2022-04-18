@@ -5,13 +5,43 @@
     /// </summary>
     class PlayerB
     {
-        /// <summary>
-        /// Набор инструкций на все ходы
-        /// </summary>
-        private bool[] answers = new bool[] {true,true,true,true,true, false,false,false,false,false,false,
+
+        private bool[] yes = new bool[] {true,true,true,true,true,
+                                        true,true,true,true,true,
+                                        true,true,true,true,true,
+                                        true,true,true,true,true,
+                                        true,true,true,true,true};
+
+
+        private bool[] no = new bool[] {false,false,false,false,false,
+                                        false,false,false,false,false,
+                                        false,false,false,false,false,
+                                        false,false,false,false,false,
+                                        false,false,false,false,false};
+
+
+        private bool[] algorithm = new bool[] {true,true,true,true,true, false,false,false,false,false,false,
                                              true,true, false,false,false,false,
                                              true,true,true,true, false,
                                              true, false,false};
+        /// <summary>
+        /// Набор инструкций на все ходы
+        /// </summary>
+        private bool[] answers;
+        
+        /// <summary>
+        /// Конструктор для определения алгоритма поведения
+        /// </summary>
+        /// <param name="i">0-всегда да, 1-всегда нет, остальное-алгоритм</param>
+        public PlayerB(int i)
+        {
+            switch (i) {
+                case 0: { answers = yes; break; }
+                case 1: { answers = no; break; }
+                case 2: { answers = algorithm; break; }
+                default: { answers = algorithm; break; }
+            }
+        }
 
         /// <summary>
         /// Ответ игрока Б

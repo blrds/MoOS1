@@ -50,7 +50,7 @@ namespace MoOS1.Models
         /// <summary>
         /// Игрок Б
         /// </summary>
-        public PlayerB playerB { get; set; } = new PlayerB();
+        public PlayerB playerB { get; set; }
 
         /// <summary>
         /// Строка состояний игры во времени
@@ -79,6 +79,7 @@ namespace MoOS1.Models
         public void Start()
         {
             if (playerA == null) return;//если игрок А по каким-либо причинам не задан
+            if (playerB == null) return;//если игрок B по каким-либо причинам не задан
             _isGameOn = true;
 
             #region preparations

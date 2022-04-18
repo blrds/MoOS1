@@ -27,6 +27,11 @@ namespace MoOS1.ViewModels
         /// Индекс выбранного режима в комбобоксе
         /// </summary>
         public int SelectedPlayerAMode { get; set; }
+        
+        /// <summary>
+        /// Индекс выбранного режима в комбобоксе
+        /// </summary>
+        public int SelectedPlayerBMode { get; set; }
 
         /// <summary>
         /// Коллекция игр, переменная Game является последней
@@ -64,6 +69,7 @@ namespace MoOS1.ViewModels
                 case 1: { Game.playerA = new RandomA(); break; }
                 default: { Game.playerA = new RandomA(); break; }
             }
+            Game.playerB = new PlayerB(SelectedPlayerBMode);
             for (int i = 0; i < SimulationsCount - 1/*-1 тк под одну игру есть отдельная переменная*/; i++)
             {
                 var game = new Game();
